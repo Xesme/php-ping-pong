@@ -3,10 +3,12 @@
 class PingPongGenerator
 {
     public $number;
+    public $output_num;
 
     function __construct($number)
     {
         $this->number = $number;
+        $this->output_num = $output_num;
     }
 
     function getNumber()
@@ -14,11 +16,11 @@ class PingPongGenerator
         $this->number = $number;
     }
 
-    function setNumber($new_number)
-    {
-        $this->number = $new_number;
-        return $new_number;
-    }
+    // function setNumber($new_number)
+    // {
+    //     $this->number = $new_number;
+    //     return $new_number;
+    // }
 
     //
     // function setNumer($number)
@@ -26,28 +28,28 @@ class PingPongGenerator
     //     $this->number = "";
     // }
 
-    // function makePingPong($this_num)
-    // {
-    //     $number = $this_num;
-    //     $output_num = [];
-    //     for ($i = 1; $i <= $this_num; $i++) {
-    //         array_push($output_num, $i);
-    //     };
-    //     for ($i = 0; $i <sizeof($output_num); $i++)
-    //     {
-    //         if (($this_num % 15 == 0)) {
-    //             return "ping-pong";
-    //         }
-    //         if (($this_num % 3 == 0)) {
-    //             return "ping";
-    //         }
-    //         if (($this_num % 5 == 0)) {
-    //             return "pong";
-    //         }
-    //     }
-    //         return $output_num;
-    //         echo $output_num;
-    //
-    // }
+    function makePingPong($new_input)
+    {
+        $number = $this->number;
+        $output_num = array();
+        for ($i = 1; $i <= $number; $i++) {
+            array_push($output_num, $i);
+        };
+        for ($i = 0; $i <sizeof($output_num); $i++)
+        {
+            if (([$i] % 15 == 0)) {
+                $output_num[$i] = "ping-pong";
+            }
+            if (([$i] % 3 == 0)) {
+                $output_num[$i] = "ping";
+            }
+            if (([$i] % 5 == 0)) {
+                $output_num[$i] = "pong";
+            }
+        }
+            return $output_num;
+
+
+    }
 }
 ?>

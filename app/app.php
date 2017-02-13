@@ -13,10 +13,11 @@
     });
 
     $app->post('/result', function() use($app) {
-        $number = new PingPongGenerator($_POST['number']);
-        // $number->makePingPong($number);
+        $new_input = ($_POST['number']);
+        $input_number = new PingPongGenerator($new_input);
+        $input_number->makePingPong($new_input);
         // $new_num = $number->getNumber();
-        return $app['twig']->render('ping-pong-result.html.twig', ["result" => $number]);
+        return $app['twig']->render('ping-pong-result.html.twig', ["result" => $output_num]);
     });
     return $app;
 ?>
